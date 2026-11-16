@@ -24,35 +24,32 @@ const getRefreshToken = (payload: JwtPayload) => {
 };
 
 const setAccessTokenCookie = (res: Response, token: string) => {
-  
   cookieUtils.setCookie(res, "accessToken", token, {
     httpOnly: true,
     secure: true,
     sameSite: "none",
     path: "/",
-    maxAge: 60 * 60 * 60 * 24,
+    maxAge: 60 * 60 * 24 * 1000,
   });
 };
 
 const setRefreshTokenCookie = (res: Response, token: string) => {
-
   cookieUtils.setCookie(res, "refreshToken", token, {
     httpOnly: true,
     secure: true,
     sameSite: "none",
     path: "/",
-    maxAge: 60 * 60 * 60 * 24 * 7,
+    maxAge: 60 * 60 * 24 * 1000 * 7,
   });
 };
 
 const setBetterAuthSessionCookie = (res: Response, token: string) => {
-
   cookieUtils.setCookie(res, "better-auth.session_token", token, {
     httpOnly: true,
     secure: true,
     sameSite: "none",
     path: "/",
-    maxAge: 60 * 60 * 60 * 24,
+    maxAge: 60 * 60 * 24 * 1000,
   });
 };
 export const tokenUtils = {
