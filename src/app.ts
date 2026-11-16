@@ -11,7 +11,7 @@ const app: Application = express();
 
 app.set("view engine", "ejs");
 
-app.set("views", path.resolve(process.cwd(),`src/app/template`,);
+app.set("views", path.resolve(process.cwd(), `src/app/template`));
 
 app.use("/api/auth", toNodeHandler(auth));
 
